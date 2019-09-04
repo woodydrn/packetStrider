@@ -1,4 +1,4 @@
-# Packet Strider (v0.1)
+# Packet Strider (v0.2)
 ![alt text](https://github.com/benjeems/packetStrider/blob/master/images/strider_400w.png "strider logo")
 
 
@@ -15,6 +15,7 @@ Separately to the forensic context, packet strider predictions could also be use
 - Strides through this feature set numerous times using sliding windows - Inspired by Convolutional Neural networks - to predict:
   - Forward and Reverse session initiation (prior to login attempt).
   - All predictions and metadata reports on a stream by stream basis.
+  - The use of the -R option in the forward session. This option enables Reverse SSH to occur.
   - Failed and successful logins.
   - Human or scripted, based on timing deltas.
   - Is the server already known to the client? or was it the first time a connection between the two has been made. This is done through packet deltas associated with known_hosts.
@@ -91,7 +92,7 @@ Network traffic from this activity is saved to tcpdump.pcap and now it's time to
 
  `python3 packetStrider-ssh.py -f tcpdump.pcap -k -p -o out` 
  
-![alt text](https://github.com/benjeems/packetStrider/blob/master/images/screen%20output.png "Screen Output")
+![alt text](https://github.com/benjeems/packetStrider/blob/master/images/screen%20output_2.png "Screen Output")
 
  This plot shows a timeline of key predictions (image has been annotated here)
 ![alt text](https://github.com/benjeems/packetStrider/blob/master/images/packet-strider-ssh%20tcpdump.pcap%20stream%200%20-%20Keystrokes.png "Keystroke timeline") 
